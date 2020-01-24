@@ -1,0 +1,308 @@
+Delivered-To: phishing.sample@gmail.com
+Received: by 2002:a25:b952:0:0:0:0:0 with SMTP id s18csp3634345ybm;
+        Tue, 21 Jan 2020 03:26:54 -0800 (PST)
+X-Received: by 2002:a92:c50f:: with SMTP id r15mr3249221ilg.258.1579606014326;
+        Tue, 21 Jan 2020 03:26:54 -0800 (PST)
+ARC-Seal: i=3; a=rsa-sha256; t=1579606014; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=vD440XfmJ3MJM/auGaByQgIkncCC/pIjzqAobDQOJXqoid121uvj/phXpwUPWZVZPr
+         1fLCLE43zEpgw4K2D+hrcKxoip4ZAWJhS+iBc+z1Nyymcg2X9ok0zkfGRb3oDBwQl4Uu
+         3zKH9sdEMLh7QWS1Jq90cXmn/RptpNgZ1J7RqumQwPFIK2MtzSGU5AI2tH5b5VbUpnvC
+         LUHsbypuPajYB9dxlgpLWIRsPl/bvqFJlQeLf15Oa3QWmoxh/Hy+zgvYSHGbEUS/TPTX
+         KCQ4KCZ3i6IRvcQyAhwiPJPjVHFWmMQuVleo0TPSP4qe8jJnSaPh3/oA6wIe/QZrxC/S
+         CzAw==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature
+         :delivered-to:delivered-to;
+        bh=TJYEq2CyvCQrU1gFY1uZQS+P+X1rlc8zeVAV0w/jUHA=;
+        b=M3wdsT4b2gVEUKd2ufZed6RA2H0l2Qmaa1ZFzvHlvNvEad/XjafrWG5DZnGz1MUP8a
+         2ObzJuNocwZzdFbvFa5h606pPrcSB8VJreUnWJH69UpB3riwsNjqfciPAeEj5ljtJh6g
+         kT1s+7I76kRCteBgeZ7Fss0ttodH/tLLiT9rEM7ZJDSC1AweaqJjSiZvdF4eSCd+pWkR
+         RWR2JKxMNTQgSsbsMrANKi4FEgF2F29UQZOcEvUr+q7UGLrrctBV79KcP+QqZGsjftGw
+         aA8QpWXz22BDroi0EC/fK2NY7H6RFzfauf3ZYLCc320MrVPDBmnqU1FpfQVwKxWy4eTx
+         i+0A==
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@PlacerProcessSystemsInc.onmicrosoft.com header.s=selector2-PlacerProcessSystemsInc-onmicrosoft-com header.b=eR32cqVl;
+       arc=pass (i=2 spf=pass spfdomain=bounce.secureserver.net dkim=pass dkdomain=placerprocesssystemsinc.onmicrosoft.com);
+         spf=pass (google.com: domain of phishing.sample+caf_=phishing.sample=gmail.com@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom="phishing.sample+caf_=phishing.sample=gmail.com@gmail.com"
+Return-Path: <phishing.sample+caf_=phishing.sample=gmail.com@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id g130sor26386498iof.127.0.0.1
+        for <phishing.sample@gmail.com>
+        (Google Transport Security);
+        Tue, 21 Jan 2020 03:26:54 -0800 (PST)
+Received-SPF: pass (google.com: domain of phishing.sample+caf_=phishing.sample=gmail.com@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@PlacerProcessSystemsInc.onmicrosoft.com header.s=selector2-PlacerProcessSystemsInc-onmicrosoft-com header.b=eR32cqVl;
+       arc=pass (i=2 spf=pass spfdomain=bounce.secureserver.net dkim=pass dkdomain=placerprocesssystemsinc.onmicrosoft.com);
+       spf=pass (google.com: domain of phishing.sample+caf_=phishing.sample=gmail.com@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom="phishing.sample+caf_=phishing.sample=gmail.com@gmail.com"
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=jshea@placerprocess.com;
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:delivered-to:dkim-signature:from:to
+         :subject:thread-topic:thread-index:date:message-id:accept-language
+         :content-language:mime-version;
+        bh=TJYEq2CyvCQrU1gFY1uZQS+P+X1rlc8zeVAV0w/jUHA=;
+        b=l4U2T5O2DlIr3ObM7yQacDBz7pT04QTmR8Muu/Ju6AjnZlggzLtU0Db3UzN2JlfBXJ
+         akqNcsrqqrHYP3biBBxSnBjBKjABMpHe+/IcrCMce/GerhXklIu2EPxK0V2gg2t/7sxZ
+         ZI1OxiF1sjmbcCW8Q5qvW4giePeFwS0ovR/U+ySPca3NWRud+UaDafUDmrKE+1eXgq4L
+         IR9uA94DhLe3mbK64sMSaMEdRjPc8p+6QkvXLPLo6svQWfDahCP2WJpZt+y+qtprhdeI
+         q+8C0wnASK5xoJt0FuSSu541WwgvqDanWIslGq6de9xCipFsqMcy2DaDYl+jxyzk2Go8
+         DTIw==
+X-Gm-Message-State: APjAAAXzNztCwJBFHuPJ1fVvS59FWRnEpz7uFwh72+BIO698rYysoAvb
+	B4ApayBsiYJEfxfLIWZoZOM1jSKJK3q7wMOxe2u5xOn3dNgsCRM=
+X-Received: by 2002:a5e:df06:: with SMTP id f6mr2714563ioq.84.1579606013973;
+        Tue, 21 Jan 2020 03:26:53 -0800 (PST)
+X-Forwarded-To: phishing.sample@gmail.com
+X-Forwarded-For: phishing.sample@gmail.com phishing.sample@gmail.com
+Delivered-To: phishing.sample@gmail.com
+Received: by 2002:a5e:cb02:0:0:0:0:0 with SMTP id p2csp8230919iom;
+        Tue, 21 Jan 2020 03:26:52 -0800 (PST)
+X-Received: by 2002:a17:90a:ca12:: with SMTP id x18mr4791034pjt.66.1579605772353;
+        Tue, 21 Jan 2020 03:22:52 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzE9R8YmD+5llQ0OFiNAUryRxBKnqa3inG/lUZee7FMu5zx/gA8l9mwZ+uGw2fXPba8QMJr
+X-Received: by 2002:a17:90a:ca12:: with SMTP id x18mr4790950pjt.66.1579605771317;
+        Tue, 21 Jan 2020 03:22:51 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1579605771; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=vJMrDvP3cVZ5r/90UrNMhhW72B9BfXzFrqCIX0ZmWrFzLxWmUx7CeZgsWc8+HBbsak
+         CmZYNBXQK2XsUYIWGq0loyx0lXgb+Ob2wDn4aoTbpYT1uZUuCAYnueYeRdZBfKpahciA
+         LBP8wRJ9yFIA816MtXGhRBqC9qn0oWVUZUMsTiYrlklFyetB3Pk4pdg+wB41AbkRfYZa
+         GSKEfQnkhglBkpybByqjBfky5Qnq2OP3dN9B/+4qb18VqfV22RUydRpqyzG2KdQ6p2dn
+         LM974vDC9bjxkO0P8+73Lcz8CdyBT6EPrpyd81242ETDfXu64jC6udkDy8LD3VcLepIE
+         BOQg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature
+         :delivered-to;
+        bh=TJYEq2CyvCQrU1gFY1uZQS+P+X1rlc8zeVAV0w/jUHA=;
+        b=Cpz3+JpQjgyRh6I3qqxhgcMsYdygKcML8F6gAwQmIqXH0ZZVeLNGqj1DWxDcdOEx+K
+         3KRM+2yjPG1FMiJ6pUAobtxKtwv5KjSJ9/aKIReTK7lf4BW953JB/kwfWvKHnbX5yKk2
+         /xZy7jHnjvoVMJO29X9gG2kU/MytPYw9A2l3O9d24NSd+f64E6IehaQM5iFa/15ia+1X
+         2qgxLS7T7gXXXhAam+Nh4nvgrwqjONidxiExhSlMs+g+OsozOCKMqrDXoyqQZwBYa5Qr
+         26HgYUcMQNyQgnIKLd/IBfRh2HXEI3SXoDf5TN3GTSxCQrHMJ8uQfIZ7GnmSvIAazPdn
+         sAQw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@PlacerProcessSystemsInc.onmicrosoft.com header.s=selector2-PlacerProcessSystemsInc-onmicrosoft-com header.b=eR32cqVl;
+       arc=pass (i=1 spf=pass spfdomain=placerprocess.com dkim=pass dkdomain=placerprocess.com dmarc=pass fromdomain=placerprocess.com);
+       spf=pass (google.com: domain of srs0=sxzu=3k=placerprocess.com=jshea@bounce.secureserver.net designates 68.178.252.33 as permitted sender) smtp.mailfrom="SRS0=SXZu=3K=placerprocess.com=jshea@bounce.secureserver.net"
+Return-Path: <SRS0=SXZu=3K=placerprocess.com=jshea@bounce.secureserver.net>
+Received: from p3plsmtp21-01-26.prod.phx3.secureserver.net (p3plsmtp21-01.prod.phx3.secureserver.net. [68.178.252.33])
+        by mx.google.com with ESMTP id a200si35025878pfa.282.2020.01.21.03.22.51
+        for <phishing.sample@gmail.com>;
+        Tue, 21 Jan 2020 03:22:51 -0800 (PST)
+Received-SPF: pass (google.com: domain of srs0=sxzu=3k=placerprocess.com=jshea@bounce.secureserver.net designates 68.178.252.33 as permitted sender) client-ip=68.178.252.33;
+Received: (qmail 16528 invoked from network); 21 Jan 2020 11:22:50 -0000
+Delivered-To: phishing.sample@aol.com
+Received: (qmail 16524 invoked by uid 30297); 21 Jan 2020 11:22:50 -0000
+Received: from unknown (HELO p3plibsmtp01-08.prod.phx3.secureserver.net) ([72.167.238.224])
+          (envelope-sender <jshea@placerprocess.com>)
+          by p3plsmtp21-01-26.prod.phx3.secureserver.net (qmail-1.03) with SMTP
+          for <phishing.sample@aol.com>; 21 Jan 2020 11:22:50 -0000
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com ([40.107.244.124])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 256/256 bits)
+	(Client did not present a certificate)
+	by CMGW with ESMTP
+	id trcQiuAvYtaUmtrcQi2hiD; Tue, 21 Jan 2020 04:22:50 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jeMIf+ontrEcaInmzPCQs9EbD7Y2KgEyns1fN1vp/DpKN1KqWrhOj9+gd286HpLP8gFQ+GZvzX5vKP9ZXOsUL4ZgVbObhsSfTKLRkrt7a5852FjxKiKJBe6tO1Xgpbb/BYwVEuKiYyWe37rN/k/MxypgDAERLwJ+fZLIBGnOTsQ8PypajOmoQfP482iZMrVRLQ7wOcR3gRXw8qNRdRycM6qI10Y3jgr3ncffafGRCcRdoQXNqf3RdNTHod7urPHQFDwK2DSxMqLFx6+K2FRJQlgX9Vhy9K/uDzayRUYKfdQwHukiNRd/+xy5NtqrbQdn/SaStV2h8+FffvITsN6tzg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TJYEq2CyvCQrU1gFY1uZQS+P+X1rlc8zeVAV0w/jUHA=;
+ b=lb8hIjWjV9vNQYVTBt0OMcaSmTeiTfz7DCRY9uHF8clZHzZtbA50LecYcoH0BfoX97sXe/jiL3A6a8/hcAvl6Qe5pXxzna4vb/fFItDWEvmYhCKSkGRRL6kLz4iXGTcB7RR86oAQRybBadsI86e+0s3YJsxLuD2neC3rNW5aGoWHOEEvTLaWIxyeN5BPHY/S9RGKjPMXQVPGHHLcp/ZA0FcYKKgvT5IV1741cBJ6caRo6PkYxHn8KqB8FHMF9z9VUvjDKpyWh2wXDDt8ogEAGnloX3E1tfQVet+JfrcGrq+p2cdszdqMTRcsUzgG7QZX6FiFZmJ5poZmRHnREvkrFg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=placerprocess.com; dmarc=pass action=none
+ header.from=placerprocess.com; dkim=pass header.d=placerprocess.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=PlacerProcessSystemsInc.onmicrosoft.com;
+ s=selector2-PlacerProcessSystemsInc-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TJYEq2CyvCQrU1gFY1uZQS+P+X1rlc8zeVAV0w/jUHA=;
+ b=eR32cqVlpZJnOAKR4Ftk5qLcH1C8fULb4pfAT4e/sqv1U/ty3eTN4BvFDhX9AIbJoW/K9yRyxvq8QrKJAULLKer1nnN0sc0O4qLnjKC1cdEHhiaQ9vvm/n0MMQaSaRyJd/65slD5EHd0cSBQaxUbYB34J0s4K8QJmyfv0zm22lg=
+Received: from BY5PR19MB3970.namprd19.prod.outlook.com (10.186.134.206) by
+ BY5PR19MB3713.namprd19.prod.outlook.com (52.132.255.84) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2644.23; Tue, 21 Jan 2020 11:22:49 +0000
+Received: from BY5PR19MB3970.namprd19.prod.outlook.com
+ ([fe80::69a8:cf13:df2a:1ddc]) by BY5PR19MB3970.namprd19.prod.outlook.com
+ ([fe80::69a8:cf13:df2a:1ddc%7]) with mapi id 15.20.2644.027; Tue, 21 Jan 2020
+ 11:22:48 +0000
+From: Jonathan Shea <jshea@placerprocess.com>
+To: Jonathan Shea <jshea@placerprocess.com>
+Subject: Invoice /Remittance 10022
+Thread-Topic: Invoice /Remittance 10022
+Thread-Index: AQHV0E0cuglD3mMQSEmEXQ7MFWsP7Q==
+Date: Tue, 21 Jan 2020 11:22:48 +0000
+Message-ID:
+ <BY5PR19MB39702C1A5CEA4E60B4917F20A20D0@BY5PR19MB3970.namprd19.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [41.58.106.201]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 35aa1c0c-cbff-4a32-52bc-08d79e643f27
+x-ms-traffictypediagnostic: BY5PR19MB3713:|BY5PR19MB3713:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs:
+ <BY5PR19MB3713A9A8E5710A1BD27CF70EA20D0@BY5PR19MB3713.namprd19.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0289B6431E
+x-forefront-antispam-report:
+ SFV:NSPM;SFS:(10019020)(4636009)(366004)(39850400004)(346002)(376002)(396003)(136003)(189003)(199004)(558084003)(76116006)(66946007)(66476007)(66446008)(64756008)(66556008)(81166006)(33656002)(9686003)(55016002)(8936002)(62860400002)(6862004)(186003)(6200100001)(2906002)(26005)(316002)(6506007)(81156014)(55236004)(7366002)(7416002)(8676002)(7336002)(86362001)(65686005)(7696005)(7406005)(7276002)(478600001)(52536014)(5660300002)(71200400001)(107290200001);DIR:OUT;SFP:1102;SCL:1;SRVR:BY5PR19MB3713;H:BY5PR19MB3970.namprd19.prod.outlook.com;FPR:;SPF:None;LANG:en;PTR:InfoNoRecords;MX:1;A:1;
+received-spf: None (protection.outlook.com: placerprocess.com does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ l5HlECVBA+HEeqmzeO0tY5RQLnMOvFkl/YHHwgLqH4F0d8rqPjXzMWUv/ryTPZmeUrNrUpMAkfBp//BcpxMgDUxKviR6VWZSCY1LB8VZ8b3NmrQC2tVxIt5MHUlyqJil+fGQpV6tP5t0T72Vknt6tYqZmRcLC2Rxjv581LORwDcTmOH0OMWCF7FgoE34E+2DPiWujAbrVb9nrPx0nBbijlQMyqpfngTESiJt5k2fSfFYb7kfkQod2c+YxwgkcFjMV/9KmEUh46ePWvBCng0EjhJsVKDXThTJm5kW7Y3eE0Q8DWZZKRPPNZbS1rUJL/8z5SLMxu/yY7CSaRyXBJsyqP8QSdPdjUFRuICmnR5l08/dDbcM/rjhSYRAvrXYfaVz7LSFrwPVnjlJOvLKqHqxTV1TXjFIxLN8gJUI+HJBAftsVLd5G76gxu05EXXuNSe+ZwUC23e4MzIrLChj755qN6prwvg3RzqZZFwrCgz06pULP8YQD3FaW7bvw/IaZb386hIWC6whvLHomor5HCUaFviLb5Vt8ZoH/Nno26uJbyEtRidrz6cGS22WRuNcOdFCveHDfVyXQ0AT0YknhP/5OQ==
+Content-Type: multipart/alternative;
+	boundary="_000_BY5PR19MB39702C1A5CEA4E60B4917F20A20D0BY5PR19MB3970namp_"
+MIME-Version: 1.0
+X-OriginatorOrg: placerprocess.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 35aa1c0c-cbff-4a32-52bc-08d79e643f27
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jan 2020 11:22:48.2824
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a27c14ad-23c6-4306-b567-07643468c0fc
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: n9nBMdLHrfUOsgF48/slvdDAXqfm/cKIOILenFdaDJNWnHiaCpSQFbCOQhoQ/T7i5Ow2sKtxinxR5FzHv56wxA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR19MB3713
+X-CMAE-Envelope: MS4wfLirWfWIL1ByCNKgW0g6NeG50rc37YXp9z5hAheyH2yZ9JkwLrLY0lUL/gdrgWKdyTSb42gMjGH20H6FlJoZrssH4DObrsYGcw1ZuYtID7Ig3K+wZ618
+ 3y3CiyM+5avkOzASvWDqKvpiusB5qsnPt4Indba+0NwnAujqR3TcjCX1NDMNmi3tMGVSB42AhXKcaRIoElGrDMmafbj5phUiny5mdeb3yamUzDAp/Thgp0pS
+
+--_000_BY5PR19MB39702C1A5CEA4E60B4917F20A20D0BY5PR19MB3970namp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Good Morning,
+
+View your remittance attached.
+
+
+
+PDF remittance advice copy.pdf<https://docsend.com/view/aqnar2i>
+
+
+
+If you have any queries out your invoice amount, Please see the support art=
+icle  on invoices and terms.
+
+Regards,
+
+Thanks,
+
+Jonathan Shea
+
+Accounting Department
+
+Placer Process Systems, Inc.
+
+Office 916-782-5213 ext: 316
+
+
+--_000_BY5PR19MB39702C1A5CEA4E60B4917F20A20D0BY5PR19MB3970namp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+span.EmailStyle18
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p><span style=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif=
+">Good Morning,&nbsp;&nbsp;</span><o:p></o:p></p>
+<p><span style=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif=
+;border:none windowtext 1.0pt;padding:0in">View your remittance attached.</=
+span><o:p></o:p></p>
+<p><span style=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif=
+;border:none windowtext 1.0pt;padding:0in">&nbsp;</span><o:p></o:p></p>
+<p><b><span style=3D"font-family:&quot;Tahoma&quot;,sans-serif;color:white;=
+text-transform:uppercase;background:#C13C13">PDF</span></b>&nbsp;<a href=3D=
+"https://docsend.com/view/aqnar2i" target=3D"_blank">remittance advice copy=
+.pdf</a><o:p></o:p></p>
+<p>&nbsp;<o:p></o:p></p>
+<p><span style=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif=
+;border:none windowtext 1.0pt;padding:0in">If you have any queries out your=
+&nbsp;<span style=3D"color:black;background:#FFF100">invoice</span>&nbsp;am=
+ount, Please see the support article &nbsp;on&nbsp;<span style=3D"color:bla=
+ck;background:#FFF100">invoice</span>s
+ and terms.<br>
+&nbsp;<br>
+Regards,</span><o:p></o:p></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt"><span style=3D"color:#201F1E"=
+>Thanks,<o:p></o:p></span></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;vertical-align:baseline"><span=
+ style=3D"font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;=
+color:#1F497D;border:none windowtext 1.0pt;padding:0in">Jonathan Shea</span=
+><span style=3D"color:#201F1E"><o:p></o:p></span></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;vertical-align:baseline"><span=
+ style=3D"font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;=
+color:#1F497D;border:none windowtext 1.0pt;padding:0in">Accounting Departme=
+nt</span><span style=3D"color:#201F1E"><o:p></o:p></span></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;vertical-align:baseline"><span=
+ style=3D"font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;=
+color:#1F497D;border:none windowtext 1.0pt;padding:0in">Placer Process Syst=
+ems, Inc.</span><span style=3D"color:#201F1E"><o:p></o:p></span></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;vertical-align:baseline"><span=
+ style=3D"font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;=
+color:#1F497D;border:none windowtext 1.0pt;padding:0in">Office 916-782-5213=
+ ext: 316</span><span style=3D"color:#201F1E"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+
+--_000_BY5PR19MB39702C1A5CEA4E60B4917F20A20D0BY5PR19MB3970namp_--
