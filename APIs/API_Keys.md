@@ -2,7 +2,7 @@
 >Use the directions below to get API Keys that you will use for OSINT and Social Engineering.
 
 ## Have I Been Pwned
->No key required.
+>https://haveibeenpwned.com/API/Key
 
 ## Google
 >Google requires 2 API keys, the regular API and the Custom Search Engine (CSE). The API requires a Google account and is accessible here: https://console.developers.google.com/apis/dashboard. Once you have an API key, navigate to https://cse.google.com/cse/all for a CSE key.
@@ -44,9 +44,6 @@ Instagram is deprecating it's own API in July. The new API will be under Faceboo
 
 ## Builtwith
 >Sign up for an API key here: https://api.builtwith.com/
-
-## Pastebin
-> Sign up here: https://pastebin.com/signup (Note: Pastebin also runs Black Friday specials)
 
 ## Bing
 >For Bing, sign up here: https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/
