@@ -1,5 +1,9 @@
 # API Keys
->Use the directions below to get API Keys that you will use for OSINT and Social Engineering.
+>Use the directions below to get API Keys that you will use for OSINT and Social Engineering.\\
+
+>NOTES:
+>>This can also be found on my Wiki: https://theosintion.com/wiki/doku.php?id=api-keys
+>>While I will be making every effort to keep this Wiki up to date, there may be times that I fall behind. Please send me an email: mailto:contact@theosintion.com and in the interim, please refer to the vendor website.
 
 ## Have I Been Pwned
 >Link: https://haveibeenpwned.com/API/Key
