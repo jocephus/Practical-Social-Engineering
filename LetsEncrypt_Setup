@@ -1,0 +1,5 @@
+## Let'sEncrypt Setup
+Let’s Encrypt is a free, automated, and open certificate authority (CA), run for the public’s benefit. It is a service provided by the Internet Security Research Group (ISRG) and is an excellent method for implementing HTTPS (for free!). 
+
+### Let'sEncrypt Installation
+From the Let'sEncrypt documentation, instructions for installation are provided [here](https://letsencrypt.org/getting-started/).
